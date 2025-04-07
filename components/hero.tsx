@@ -79,12 +79,13 @@ export default function Hero() {
     },
   };
 
+  // Fixed floating animation - using proper type for repeatType
   const floatingAnimation = {
     y: [0, -10, 0],
     transition: {
       duration: 4,
       repeat: Number.POSITIVE_INFINITY,
-      repeatType: "reverse",
+      repeatType: "reverse" as const, // Fixed: Use 'as const' to specify the literal type
       ease: "easeInOut",
     },
   };
@@ -137,12 +138,12 @@ export default function Hero() {
         className="absolute top-1/2 right-32 w-4 h-4 rounded-sm bg-blue-500 dark:bg-blue-400 hidden md:block"
         animate={{
           y: [0, -10, 0],
-          transition: {
-            duration: 3,
-            repeat: Number.POSITIVE_INFINITY,
-            repeatType: "reverse" as const, // Add 'as const' to specify the literal type
-            ease: "easeInOut",
-          },
+        }}
+        transition={{
+          duration: 3,
+          repeat: Number.POSITIVE_INFINITY,
+          repeatType: "reverse",
+          ease: "easeInOut",
         }}
       />
 
@@ -210,15 +211,16 @@ export default function Hero() {
                       Download CV
                     </Button>
                   </a>
-                  <a href="#projects"></a>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="border-blue-600 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950 rounded-xl group transition-all duration-300 transform hover:translate-y-[-3px]"
-                  >
-                    <ExternalLink className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform" />
-                    View Projects
-                  </Button>
+                  <a href="#projects">
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="border-blue-600 text-blue-600 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-950 rounded-xl group transition-all duration-300 transform hover:translate-y-[-3px]"
+                    >
+                      <ExternalLink className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform" />
+                      View Projects
+                    </Button>
+                  </a>
                 </motion.div>
 
                 <motion.div
@@ -254,7 +256,15 @@ export default function Hero() {
               <div className="order-1 lg:order-2 flex justify-center">
                 <motion.div
                   variants={imageVariants}
-                  animate={floatingAnimation}
+                  animate={{
+                    y: [0, -10, 0],
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Number.POSITIVE_INFINITY,
+                    repeatType: "reverse",
+                    ease: "easeInOut",
+                  }}
                   className="relative"
                 >
                   {/* Main profile image with creative border */}
