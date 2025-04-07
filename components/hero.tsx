@@ -12,6 +12,7 @@ import {
   Code,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image"; // Import Next.js Image component
 
 export default function Hero() {
   const typedRef = useRef(null);
@@ -79,16 +80,7 @@ export default function Hero() {
     },
   };
 
-  // Fixed floating animation - using proper type for repeatType
-  const floatingAnimation = {
-    y: [0, -10, 0],
-    transition: {
-      duration: 4,
-      repeat: Number.POSITIVE_INFINITY,
-      repeatType: "reverse" as const, // Fixed: Use 'as const' to specify the literal type
-      ease: "easeInOut",
-    },
-  };
+  // Note: We're removing the unused floatingAnimation variable
 
   return (
     <section
@@ -177,7 +169,7 @@ export default function Hero() {
 
                 <motion.div variants={itemVariants} className="mb-6">
                   <h2 className="text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-300 flex items-center">
-                    I'm a{" "}
+                    I&apos;m a{" "}
                     <span
                       className="text-blue-600 dark:text-blue-400 ml-2 inline-block min-h-[40px] min-w-[200px]"
                       ref={typedRef}
@@ -277,11 +269,16 @@ export default function Hero() {
 
                     {/* Profile image */}
                     <div className="absolute inset-3 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl">
-                      <img
-                        src="/images/balcony.jpeg"
-                        alt="Seniru Hasith"
-                        className="w-full h-full object-cover"
-                      />
+                      <div className="relative w-full h-full">
+                        <Image
+                          src="/images/balcony.jpeg"
+                          alt="Seniru Hasith"
+                          fill
+                          sizes="(max-width: 768px) 80vw, 450px"
+                          priority
+                          className="object-cover"
+                        />
+                      </div>
                     </div>
                   </div>
 

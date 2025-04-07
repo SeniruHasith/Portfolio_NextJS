@@ -113,7 +113,7 @@ export default function Skills() {
           </h2>
           <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            A comprehensive overview of my technical expertise and tools I'm
+            A comprehensive overview of my technical expertise and tools I‘m
             proficient in.
           </p>
         </motion.div>

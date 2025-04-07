@@ -35,7 +35,7 @@ export default function About() {
               Who am I?
             </h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              I'm a passionate Flutter Developer with hands-on experience
+              I&apos;m a passionate Flutter Developer with hands-on experience
               designing and deploying mobile applications. I specialize in state
               management, API integration, and modern CI/CD pipelines,
               delivering high-performance solutions for iOS and Android.
@@ -43,7 +43,7 @@ export default function About() {
             <p className="text-gray-600 dark:text-gray-400 mb-6">
               Currently in my final year of BSc in Computer Science, I combine
               academic knowledge with practical experience to create innovative
-              mobile solutions. I'm enthusiastic about collaboration and
+              mobile solutions. I&apos;m enthusiastic about collaboration and
               building customer-focused apps that solve real-world problems.
             </p>
 

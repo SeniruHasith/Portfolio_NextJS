@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import Image from "next/image"; // Import Next.js Image component
 
 const projects = [
   {
@@ -104,11 +105,16 @@ export default function Projects() {
             <motion.div key={index} variants={itemVariants} className="group">
               <Card className="overflow-hidden h-full hover:shadow-lg transition-shadow">
                 <div className="relative h-48 overflow-hidden">
-                  <img
-                    src={project.image || "/placeholder.svg"}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
+                  <div className="relative w-full h-full">
+                    <Image
+                      src={project.image || "/placeholder.svg"}
+                      alt={project.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                      priority={index < 2} // Prioritize loading the first two images
+                    />
+                  </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                     <div className="flex space-x-2">
                       {project.github && (
