@@ -227,7 +227,7 @@ export default function Hero() {
                   className="flex items-center space-x-5"
                 >
                   <a
-                    href="https://github.com"
+                    href="https://github.com/SeniruHasith"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-12 h-12 flex items-center justify-center rounded-full bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:shadow-lg transition-all duration-300 transform hover:translate-y-[-3px]"
@@ -235,7 +235,7 @@ export default function Hero() {
                     <Github className="w-6 h-6" />
                   </a>
                   <a
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/in/seniru-goonathilake-bb6599231/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-12 h-12 flex items-center justify-center rounded-full bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:shadow-lg transition-all duration-300 transform hover:translate-y-[-3px]"
