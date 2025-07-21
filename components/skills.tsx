@@ -1,5 +1,4 @@
 /* eslint-disable no-dupe-keys */
-// @ts-nocheck
 "use client";
 
 import React, { useState } from "react";
@@ -790,7 +789,7 @@ const skillDescriptions: {
       "Used TensorFlow Lite for mobile applications, implementing pre-trained models and custom model integration.",
     stats: { projects: 4, years: 1 },
   },
-  "Machine Learning": {
+  "Machine Learning Alt": {
     description:
       "Field of AI focused on building systems that learn from data.",
     experience:
@@ -837,19 +836,6 @@ const skillDescriptions: {
     experience:
       "Built RESTful APIs and web services, implementing middleware, routing, and authentication systems.",
     stats: { projects: 8, years: 2 },
-  },
-  Flask: {
-    description: "Micro web framework for Python.",
-    experience:
-      "Experienced in building lightweight web applications and APIs using Flask. Experienced in implementing authentication, database integration, and handling complex routing. Used Flask for serving machine learning models in production.",
-    stats: { projects: 10, years: 2 },
-  },
-  "Next.js": {
-    description:
-      "React framework for production-grade applications with server-side rendering and static site generation.",
-    experience:
-      "Extensive experience building performant and SEO-friendly web applications with Next.js.",
-    stats: { projects: 12, years: 3 },
   },
   Flutter: {
     description:
