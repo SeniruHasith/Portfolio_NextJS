@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { Linkedin, Quote } from "lucide-react";
+import { Linkedin } from "lucide-react";
 import Image from "next/image";
 
 function Testimonials() {
