@@ -1,6 +1,5 @@
-/* eslint-disable no-dupe-keys */
 "use client";
-
+import { Linkedin } from "lucide-react";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
@@ -403,23 +402,23 @@ const FileIcon = () => (
 
 // Helper to render an icon
 const renderIcon = (
-  icon: IconType | (() => React.ReactElement) | undefined
+  IconComp: IconType | (() => React.ReactElement) | undefined
 ) => {
-  if (!icon) {
+  if (!IconComp) {
     return <FileIcon />;
   }
 
-  if (typeof icon === "function") {
+  if (typeof IconComp === "function") {
     return (
       <div className="w-5 h-5 mr-2 shrink-0 flex items-center justify-center">
-        {icon()}
+        {IconComp()}
       </div>
     );
   }
 
   return (
     <div className="w-5 h-5 mr-2 shrink-0 flex items-center justify-center">
-      <icon size={20} />
+      {React.createElement(IconComp as IconType, { size: 20 })}
     </div>
   );
 };
@@ -513,7 +512,7 @@ const TreeNode: React.FC<TreeNodeProps> = ({
   );
 };
 
-// Add skill descriptions
+// eslint-disable-next-line no-dupe-keys
 const skillDescriptions: {
   [key: string]: {
     description?: string;
@@ -763,12 +762,7 @@ const skillDescriptions: {
       "Experienced in automating mobile app deployment using Fastlane.",
     stats: { projects: 10, years: 2 },
   },
-  Xcode: {
-    description:
-      "Integrated development environment for macOS, iOS, watchOS, and tvOS.",
-    experience: "Advanced proficiency in Xcode for iOS development.",
-    stats: { projects: 15, years: 3 },
-  },
+
   "Android Studio": {
     description:
       "Official integrated development environment for Android development.",
@@ -837,76 +831,7 @@ const skillDescriptions: {
       "Built RESTful APIs and web services, implementing middleware, routing, and authentication systems.",
     stats: { projects: 8, years: 2 },
   },
-  Flutter: {
-    description:
-      "Google's UI toolkit for building natively compiled applications for mobile, web, and desktop from a single codebase.",
-    experience:
-      "Extensive experience developing cross-platform applications including mobile apps and web applications using Flutter. Proficient in state management, custom widgets, and platform integration.",
-    stats: { projects: 15, years: 3 },
-  },
-  Dart: {
-    description:
-      "Client-optimized language for fast apps on any platform. The foundation language for Flutter development.",
-    experience:
-      "Strong expertise in Dart programming, including asynchronous programming, strong typing, and object-oriented concepts. Used extensively in Flutter development.",
-    stats: { projects: 15, years: 3 },
-  },
-  Swift: {
-    description:
-      "Apple's modern programming language for iOS, macOS, watchOS, and tvOS development.",
-    experience:
-      "Experience with native iOS platform-specific implementations and customizations in Flutter projects. Proficient in implementing native Swift modules and platform channels for enhanced iOS functionality.",
-    stats: { projects: 8, years: 2 },
-  },
-  Kotlin: {
-    description:
-      "Modern programming language for Android development that is fully interoperable with Java.",
-    experience:
-      "Hands-on experience with Android native implementations in Flutter projects. Skilled in developing Kotlin-based platform-specific code and method channels for enhanced Android functionality.",
-    stats: { projects: 8, years: 2 },
-  },
-  Authentication: {
-    description:
-      "Firebase Authentication service for secure user authentication and identity management.",
-    experience:
-      "Implemented multiple authentication methods including email/password, Google, Apple, and Facebook sign-in across various applications.",
-    stats: { projects: 10, years: 3 },
-  },
-  Firestore: {
-    description:
-      "NoSQL cloud database by Firebase for real-time data synchronization.",
-    experience:
-      "Used Firestore for testimonials in client projects and as primary database for smaller applications. Experienced with real-time data updates and offline persistence.",
-    stats: { projects: 8, years: 2 },
-  },
-  "Dynamic Links": {
-    description:
-      "Firebase service for creating smart URLs that dynamically adapt to different platforms.",
-    experience:
-      "Implemented as a feature in applications for deep linking and referral systems. Aware of upcoming deprecation and alternative solutions.",
-    stats: { projects: 4, years: 1 },
-  },
-  "App Distribution": {
-    description:
-      "Firebase service for distributing app builds to testers and stakeholders.",
-    experience:
-      "Used for APK distribution in development and testing phases. Streamlined the testing process with automated build distribution.",
-    stats: { projects: 6, years: 2 },
-  },
-  Analytics: {
-    description:
-      "Firebase Analytics for tracking user behavior and app performance metrics.",
-    experience:
-      "Implemented in major industrial mobile applications for user behavior tracking, conversion monitoring, and business metrics analysis.",
-    stats: { projects: 8, years: 2 },
-  },
-  "Performance Monitoring": {
-    description:
-      "Firebase service for monitoring and analyzing app performance in real-time.",
-    experience:
-      "Utilized in large-scale industrial applications to track and optimize app performance, network requests, and resource usage.",
-    stats: { projects: 8, years: 2 },
-  },
+
   "Azure Repos": {
     description:
       "Version control system within Azure DevOps for managing source code and git workflows.",
@@ -960,13 +885,6 @@ const skillDescriptions: {
     experience:
       "Used PyTorch for developing and training deep learning models alongside TensorFlow. Experience in implementing neural networks and working with pre-trained models for computer vision and NLP tasks.",
     stats: { projects: 4, years: 1 },
-  },
-  "React Native": {
-    description:
-      "Framework for building native mobile applications using React and JavaScript/TypeScript.",
-    experience:
-      "Built cross-platform mobile applications using React Native alongside Flutter. Proficient in native module integration, platform-specific implementations, and performance optimization. Experience with React Navigation, state management, and native APIs.",
-    stats: { projects: 6, years: 2 },
   },
 };
 
@@ -1069,8 +987,8 @@ export default function Skills() {
           </h2>
           <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            A comprehensive overview of my technical expertise and tools I'm
-            proficient in.
+            A comprehensive overview of my technical expertise and tools
+            I&apos;m proficient in.
           </p>
         </motion.div>
 
