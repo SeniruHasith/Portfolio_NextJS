@@ -5,9 +5,6 @@ import { motion } from "framer-motion";
 import {
   ExternalLink,
   Github,
-  Brain,
-  BotIcon as Robot,
-  Film,
   ArrowLeft,
   Calendar,
   Users,

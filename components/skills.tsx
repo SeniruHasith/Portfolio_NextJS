@@ -20,7 +20,6 @@ import {
   SiRedux,
   SiGraphql,
   SiPostgresql,
-  SiMysql,
   SiGitlab,
   SiFastlane,
   SiXcode,
@@ -370,10 +369,6 @@ interface TreeNodeProps {
   parentPath?: string;
 }
 
-interface FolderIconProps {
-  isOpen: boolean;
-}
-
 interface TreeIconProps {
   item: FileTreeItem;
   isOpen: boolean;
@@ -607,9 +602,16 @@ const skillDescriptions: {
     stats: { projects: 8, years: 2 },
   },
   Flask: {
-    stats: { projects: 6, years: 2 },
+    description: "Micro web framework for Python.",
+    experience:
+      "Experienced in building lightweight web applications and APIs using Flask. Experienced in implementing authentication, database integration, and handling complex routing. Used Flask for serving machine learning models in production.",
+    stats: { projects: 10, years: 2 },
   },
   "Machine Learning": {
+    description:
+      "Field of AI focused on building systems that learn from data.",
+    experience:
+      "Developed and deployed various machine learning models using Python. Experience includes image classification, text analysis, and predictive modeling. Proficient in model training, validation, and production deployment.",
     stats: { projects: 4, years: 1 },
   },
   Python: {
@@ -618,19 +620,6 @@ const skillDescriptions: {
     experience:
       "Extensive experience in developing machine learning models and Flask web applications. Proficient in data processing, model training, and API development using Python. Skilled with libraries like NumPy, Pandas, and scikit-learn for data analysis and machine learning implementations.",
     stats: { projects: 8, years: 2 },
-  },
-  Flask: {
-    description: "Lightweight and flexible Python web framework.",
-    experience:
-      "Built multiple web applications and RESTful APIs using Flask. Experienced in implementing authentication, database integration, and handling complex routing. Used Flask for serving machine learning models in production.",
-    stats: { projects: 6, years: 2 },
-  },
-  "Machine Learning": {
-    description:
-      "Field of AI focused on building systems that learn from data.",
-    experience:
-      "Developed and deployed various machine learning models using Python. Experience includes image classification, text analysis, and predictive modeling. Proficient in model training, validation, and production deployment.",
-    stats: { projects: 4, years: 1 },
   },
   JavaScript: {
     description:
@@ -805,7 +794,7 @@ const skillDescriptions: {
     description:
       "Field of AI focused on building systems that learn from data.",
     experience:
-      "Implemented machine learning models for image classification and text analysis in mobile applications.",
+      "Developed and deployed various machine learning models using Python. Experience includes image classification, text analysis, and predictive modeling. Proficient in model training, validation, and production deployment.",
     stats: { projects: 4, years: 1 },
   },
   "React Native": {
@@ -852,7 +841,7 @@ const skillDescriptions: {
   Flask: {
     description: "Micro web framework for Python.",
     experience:
-      "Experienced in building lightweight web applications and APIs using Flask.",
+      "Experienced in building lightweight web applications and APIs using Flask. Experienced in implementing authentication, database integration, and handling complex routing. Used Flask for serving machine learning models in production.",
     stats: { projects: 10, years: 2 },
   },
   "Next.js": {
@@ -1031,20 +1020,6 @@ const SkillStats: React.FC<{ stats: SkillStats }> = ({ stats }) => {
           </div>
         </div>
       </div>
-    </div>
-  );
-};
-
-// Update ProgressBar for a more subtle design
-const ProgressBar: React.FC<{ progress: number }> = ({ progress }) => {
-  return (
-    <div className="w-24 h-1.5 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-      <motion.div
-        initial={{ width: 0 }}
-        animate={{ width: `${progress}%` }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
-        className="h-full bg-blue-600 dark:bg-blue-500 rounded-full"
-      />
     </div>
   );
 };

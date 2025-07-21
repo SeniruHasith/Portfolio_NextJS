@@ -6,7 +6,6 @@ import {
   ExternalLink,
   Github,
   Brain,
-  BotIcon as Robot,
   Film,
   ArrowRight,
   Home,
