@@ -410,7 +410,7 @@ const renderIcon = (
   if (typeof IconComp === "function") {
     return (
       <div className="w-5 h-5 mr-2 shrink-0 flex items-center justify-center">
-        {IconComp()}
+        {React.createElement(IconComp as IconType, { size: 20 })}
       </div>
     );
   }
@@ -511,7 +511,6 @@ const TreeNode: React.FC<TreeNodeProps> = ({
   );
 };
 
-// eslint-disable-next-line no-dupe-keys
 const skillDescriptions: {
   [key: string]: {
     description?: string;
@@ -1035,9 +1034,17 @@ export default function Skills() {
                   className="space-y-6"
                 >
                   <div className="flex items-center gap-3">
-                    {TechnologyIcons[
-                      selectedSkill as keyof typeof TechnologyIcons
-                    ]?.() || <FileIcon />}
+                    {((): React.ReactNode => {
+                      const IconSel =
+                        TechnologyIcons[
+                          selectedSkill as keyof typeof TechnologyIcons
+                        ];
+                      return IconSel ? (
+                        React.createElement(IconSel as IconType, { size: 20 })
+                      ) : (
+                        <FileIcon />
+                      );
+                    })()}
                     <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
                       {selectedSkill}
                     </h3>
