@@ -26,7 +26,7 @@ function Testimonials() {
     },
     {
       name: "Praneeth Seneviratne",
-      title: "Student at Informatics Institute of Technology",
+      title: "Tech Lead at Hitachi Digital Payment Solutions",
       text: "Seniru is an excellent Software Engineer. He has very good interpersonal skills and is a good listener, quickly absorbing new development concepts. He takes responsibility and ensures timely delivery, even working extra hours to meet deadlines.\n\nHe quickly aligns with project leads and consistently stays on the right path. He is hardworking and more mature in terms of development skills compared to his peers. Seniru works well with the team and is highly recommended by all our project managers and technical leads.",
       image: "/images/testimonials/praneeth.jpg",
       date: "April 5, 2024",
