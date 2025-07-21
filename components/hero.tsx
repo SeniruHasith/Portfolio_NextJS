@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image"; // Import Next.js Image component
+import DecryptText from "./DecryptText"; // Add this import
 
 export default function Hero() {
   const typedRef = useRef(null);
@@ -181,10 +182,16 @@ export default function Hero() {
                   variants={itemVariants}
                   className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl leading-relaxed"
                 >
-                  Motivated Computer Science graduate with 1.5 years of
-                  experience building scalable iOS and Android apps using
-                  Flutter and Firebase. Passionate about creating intuitive and
-                  performant mobile experiences.
+                  <DecryptText
+                    text="Motivated Computer Science graduate with 3+ years of experience building scalable iOS and Android apps using Flutter and Firebase. Passionate about creating intuitive and performant mobile experiences."
+                    speed={15}
+                    sequential={true}
+                    animateOn="view"
+                    className="text-gray-600 dark:text-gray-400"
+                    encryptedClassName="text-blue-500 dark:text-blue-400 font-mono"
+                    maxIterations={8}
+                    parentClassName="block w-full"
+                  />
                 </motion.p>
 
                 <motion.div
